@@ -2,8 +2,10 @@
 A module for handling school students related information
 """
 
+from abc import ABC, abstractmethod
 
-class Student(object):
+
+class Student(ABC):
     """Basic student class"""
 
     def __init__(self, name, ID, GPA, status):
@@ -21,6 +23,9 @@ class Student(object):
     def __str__(self):
         return "Student Name " + self.name
 
+    @abstractmethod
+    def is_pass(self):
+        pass
 
 class GradStudent(Student):
 
